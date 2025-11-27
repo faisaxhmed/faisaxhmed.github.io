@@ -148,33 +148,29 @@
   }
 
   /* ===== Contact Section ===== */
-  #contact {
-    background: linear-gradient(to bottom right, #0B0F3B, #2C0946);
-    padding: 40px 20px;
-    border-radius: 10px;
-    text-align: center;
-  }
-  #contact h2 {
-    font-size: 2em;
-    color: #FF6EC7;
-  }
-
-  #contact p {
-    font-size: 1.2em;
-    margin: 15px 0;
-    color: #FFFFFF;
-  }
-  
   .contact-links a {
-    margin: 0 15px;
-    font-size: 2em;
-    color: #FF6EC7;
-    transition: color 0.3s;
-  }
+  margin: 0 15px;
+  font-size: 2em;
+  color: #FF6EC7; /* base color */
+  text-decoration: none;
+  transition: color 0.3s, transform 0.2s;
+}
+
+.contact-links a:hover {
+  color: #BB86FC; /* hover color */
+  transform: scale(1.1); /* small zoom effect */
+}
+
+.contact-links a:active {
+  color: #FF69B4; /* pink on click */
+}
+
+
 
   .contact-links a:hover {
     color: #BB86FC;
   }
+
 </style>
 </head>
 <body>
@@ -278,9 +274,12 @@
   <h2>Contact Me ✨</h2>
   <p>Thank you for visiting my portfolio!</p>
   <p>Let’s connect:</p>
-  <a href="mailto:your.email@example.com" class="contact-btn">Email</a>
-  <a href="https://www.linkedin.com/in/yourprofile" class="contact-btn" target="_blank">LinkedIn</a>
-  <a href="https://github.com/yourusername" class="contact-btn" target="_blank">GitHub</a>
+  <div class="contact-links">
+    <a href="mailto:faisaahmed004@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/faisa-ahmed-41768a214/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/faisaxhmed" target="_blank">GitHub</a>
+    <a href="your-cv.pdf" target="_blank">CV</a>
+  </div>
   <p>I'm open to exploring new opportunities, different fields, and locations – happy to chat about ideas or offers!</p>
 </section>
 
