@@ -149,27 +149,27 @@
 
   /* ===== Contact Section ===== */
   .contact-links a {
+  display: inline-block;
   margin: 0 15px;
-  font-size: 2em;
-  color: #FF6EC7; /* base color */
+  padding: 12px 30px; /* vertical | horizontal padding */
+  font-size: 1.2em;
+  color: white; /* text color */
+  background-color: #FF6EC7; /* base button color */
   text-decoration: none;
-  transition: color 0.3s, transform 0.2s;
+  border-radius: 50px; /* makes it oval */
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
 }
 
 .contact-links a:hover {
-  color: #BB86FC; /* hover color */
-  transform: scale(1.1); /* small zoom effect */
+  background-color: #BB86FC; /* hover color */
+  transform: scale(1.05); /* slight zoom effect */
 }
 
 .contact-links a:active {
-  color: #FF69B4; /* pink on click */
+  background-color: #FF69B4; /* bright pink when clicked */
 }
 
-
-
-  .contact-links a:hover {
-    color: #BB86FC;
-  }
 
 </style>
 </head>
