@@ -3,119 +3,292 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Faisa Ahmed - Portfolio</title>
+  <title>Faisa Ahmed | Portfolio</title>
   <style>
-    /* Basic Reset */
-    * {
+    /* ===== General Styles ===== */
+    body {
+      font-family: 'Arial', sans-serif;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      background-color: #f9f9f9;
+      scroll-behavior: smooth;
+      background: #f0f4f8;
       color: #333;
-      line-height: 1.6;
     }
 
-    header {
-      background-color: #dc7af5;
-      color: white;
-      padding: 40px 20px;
-      text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    main {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
+    h1, h2, h3 {
+      margin: 0;
     }
 
     section {
-      margin-bottom: 40px;
+      padding: 80px 20px;
     }
 
-    section h2 {
-      color: #dc7af5;
-      margin-bottom: 15px;
-      border-bottom: 2px solid #dc7af5;
-      display: inline-block;
-      padding-bottom: 5px;
-    }
-
-    section p {
-      margin-bottom: 10px;
-    }
-
-    .projects {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    /* ===== Navigation ===== */
+    nav {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      left: 0;
+      background: #00796b;
+      color: white;
+      display: flex;
+      justify-content: center;
       gap: 20px;
+      padding: 15px 0;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 6px 12px;
+      border-radius: 5px;
+      transition: background 0.3s;
+    }
+
+    nav a:hover {
+      background: #004d40;
+    }
+
+    /* ===== About Me ===== */
+    #about {
+      background: #e0f7fa;
+      text-align: center;
+    }
+
+    #about p {
+      max-width: 700px;
+      margin: 20px auto 0;
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+
+    /* ===== Projects ===== */
+    #projects {
+      background: #fff3e0;
+      text-align: center;
     }
 
     .project-card {
-      background-color: white;
+      background: white;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-      transition: transform 0.2s;
+      margin: 20px auto;
+      border-radius: 15px;
+      max-width: 500px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
     .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
     }
+
+    /* ===== Skills ===== */
+    #skills {
+      background: #e8f5e9;
+      text-align: center;
+    }
+
+    .skills-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 25px;
+      width: 100%;
+      max-width: 1200px;
+      margin: 30px auto 0;
+    }
+
+    .skill-box {
+      background: white;
+      border-radius: 15px;
+      padding: 20px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-box:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+    }
+
+    .skill-box h3 {
+      text-align: center;
+      margin-bottom: 15px;
+      color: #4CAF50;
+    }
+
+    .skill-items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .skill-items span {
+      background: #e0f7fa;
+      color: #00796b;
+      padding: 8px 12px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: transform 0.3s, background 0.3s;
+    }
+
+    .skill-items span:hover {
+      transform: scale(1.1);
+      background: #4CAF50;
+      color: white;
+    }
+
+    /* ===== Contact ===== */
+    #contact {
+      background: #fce4ec;
+      text-align: center;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+
+    .contact-buttons a {
+      text-decoration: none;
+      padding: 12px 20px;
+      border-radius: 10px;
+      background: #f06292;
+      color: white;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+
+    .contact-buttons a:hover {
+      background: #c2185b;
+    }
+
+    /* ===== Footer ===== */
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #00796b;
+      color: white;
+    }
+
   </style>
 </head>
 <body>
 
-  <header>
-    <h1>Faisa Hassan Sheikahmed</h1>
-    <p>Final year Computer Science Student | Driven to create solutions that make a difference</p>
-  </header>
+  <!-- ===== Navigation ===== -->
+  <nav>
+    <a href="#about">About Me</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-  <main>
-    <section>
-      <h2>About Me</h2>
-      <p>Hello! I'm Faisa, a Computer Science student in London, originally from Oslo. I'm fascinated by AI, machine learning, and software development, creating technology that makes a real impact. Recently, I’ve started building my portfolio as part of my journey to showcase my skills and projects. I enjoy exploring new ideas, taking on challenges that push me to learn, and gaining insights from people with diverse perspectives. Currently, I’m working on my final year project, developing a mobile app from scratch, and I’m excited to apply my skills to real-world projects.</p>
-    </section>
+  <!-- ===== About Me ===== -->
+  <section id="about">
+    <h1>Hello! I'm Faisa 👋</h1>
+    <p>
+      I'm a final-year Computer Science student from Oslo, studying in London. 
+      Recently, I've started building this portfolio 💻 to document my journey in software development, AI, and machine learning. 
+      I love taking on challenges, exploring new ideas, and learning from people with different perspectives.
+    </p>
+  </section>
 
-    <section>
-      <h2>Projects</h2>
-      <div class="projects">
-        <div class="project-card">
-          <h3>Project 1</h3>
-          <p>Short description of your project goes here.</p>
-        </div>
-        <div class="project-card">
-          <h3>Project 2</h3>
-          <p>Short description of your project goes here.</p>
-        </div>
-        <div class="project-card">
-          <h3>Project 3</h3>
-          <p>Short description of your project goes here.</p>
+  <!-- ===== Projects ===== -->
+  <section id="projects">
+    <h2>My Projects 🚀</h2>
+    <div class="project-card">
+      <h3>Recipe Sharing Platform</h3>
+      <p>Full-stack web app using HTML, CSS, JavaScript, Node.js, Express.js & MySQL. Implemented Agile workflow, version control with Git/GitHub, and Docker containerization.</p>
+    </div>
+    <div class="project-card">
+      <h3>Mobile App Project (Ongoing)</h3>
+      <p>Currently building a mobile app from scratch using React Native to explore UI/UX design and mobile software development principles.</p>
+    </div>
+  </section>
+
+  <!-- ===== Skills ===== -->
+  <section id="skills">
+    <h2>My Skills 🛠️</h2>
+    <div class="skills-section">
+
+      <!-- Programming Languages -->
+      <div class="skill-box">
+        <h3>Programming Languages 💻</h3>
+        <div class="skill-items">
+          <span>Python 🐍</span>
+          <span>C++ 💻</span>
+          <span>Java ☕</span>
+          <span>SQL 🗄️</span>
+          <span>JavaScript 📜</span>
+          <span>HTML & CSS 🎨</span>
+          <span>C ⚙️</span>
         </div>
       </div>
-    </section>
 
-    <section>
-      <h2>Contact Me!</h2>
-      <a href="mailto:faisaahmed004@gmail.com" style="display:inline-block; padding:10px 20px; background-color:#4CAF50; color:white; text-decoration:none; border-radius:5px;">Email Me</a>
+      <!-- Frameworks & Libraries -->
+      <div class="skill-box">
+        <h3>Frameworks & Libraries 📚</h3>
+        <div class="skill-items">
+          <span>Pandas 🐼</span>
+          <span>NumPy 🔢</span>
+          <span>Scikit-learn 🤖</span>
+          <span>Matplotlib 📊</span>
+          <span>TensorFlow ⚡</span>
+          <span>Keras 🧠</span>
+        </div>
+      </div>
 
-      <a href="https://www.linkedin.com/in/faisa-ahmed-41768a214" target="_blank" style="display:inline-block; padding:10px 20px; background-color:#0077B5; color:white; text-decoration:none; border-radius:5px;">LinkedIn</a>
-      
-    </section>
-  </main>
+      <!-- Tools & Platforms -->
+      <div class="skill-box">
+        <h3>Tools & Platforms 🛠️</h3>
+        <div class="skill-items">
+          <span>Git/GitHub 🗂️</span>
+          <span>Linux 🐧</span>
+          <span>VS Code 💻</span>
+          <span>IntelliJ IDEA 🛠️</span>
+          <span>Jupyter Notebook 📓</span>
+          <span>Docker 🐳</span>
+          <span>Microsoft Office 📑</span>
+        </div>
+      </div>
+
+      <!-- Core Concepts -->
+      <div class="skill-box">
+        <h3>Core Concepts 🧩</h3>
+        <div class="skill-items">
+          <span>OOP 🔄</span>
+          <span>Algorithms & Data Structures 📈</span>
+          <span>Software Dev Lifecycle 🏗️</span>
+          <span>Agile/Scrum 📅</span>
+          <span>Version Control 🔧</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ===== Contact ===== -->
+  <section id="contact">
+    <h2>Let's Connect 🌐</h2>
+    <div class="contact-buttons">
+      <a href="mailto:faisaahmed004@gmail.com">Email 📧</a>
+      <a href="https://www.linkedin.com/in/faisa-ahmed-41768a214" target="_blank">LinkedIn 💼</a>
+      <a href="https://github.com/yourgithub" target="_blank">GitHub 🐱</a>
+    </div>
+  </section>
+
+  <!-- ===== Footer ===== -->
+  <footer>
+    &copy; 2025 Faisa Ahmed. All rights reserved.
+  </footer>
 
 </body>
 </html>
