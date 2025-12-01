@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Faisa's Portfolio</title>
+<style>
+  /* ===== Global Styles ===== */
+  body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    scroll-behavior: smooth;
+    background-color: #0B0F3B; /* Dark space blue */
+    color: #FFFFFF;
+  }
+
+  h1, h2, h3 {
+    margin: 0 0 15px;
+  }
+
+  p {
+    line-height: 1.6;
+  }
+
+  /* ===== Navigation ===== */
+  nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(15, 15, 50, 0.9); /* translucent space nav */
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 15px 0;
+    z-index: 100;
+  }
+
+  nav a {
+    color: #FF6EC7; /* Pink accent */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+  }
+
+  nav a:hover {
+    color: #BB86FC; /* Purple accent */
+  }
+
+  /* ===== Sections ===== */
+  section {
+    padding: 60px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* About Me full screen */
+  #about-me {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(to bottom right, #0B0F3B, #2C0946);
+  }
+
+  #about-me h1 {
+    font-size: 3em;
+    color: #FF6EC7;
+  }
+
+  #about-me p {
+    font-size: 1.3em;
+    max-width: 800px;
+    color: #FFFFFF;
+  }
+
+  /* ===== Skills Section ===== */
+  #skills {
+    height: 60vh;
+    background: linear-gradient(to bottom right, #1B1F4B, #2C0946);
+    border-radius: 10px;
+    padding: 40px 20px;
+  }
+  #skills h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #FF6EC7;
+  }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin-top: 30px;
+  }
+
+  .skill-box {
+    background-color: #111432; /* darker card */
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px #BB86FC;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .skill-box:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #FF6EC7;
+  }
+
+  .skill-box h3 {
+    color: #FF6EC7;
+  }
+
+  /* ===== Projects Section ===== */
+  #projects {
+    height: 100vh;
+    background: linear-gradient(to bottom right, #0B0F3B, #2C0946);
+    border-radius: 10px;
+    padding: 40px 20px;
+  }
+
+  #projects h2 {
+    font-size: 2em;
+    text-align: center;
+    color: #FF6EC7;
+  }
+  .project-link {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #FF6EC7;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.project-link:hover {
+  background-color:#BB86FC;
+  transform: scale(1.05);
+}
+
+.project-link h3 {
+  margin: 0; /* remove default h3 margin */
+}
+
+  .projects-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+    text-align: center;
+  }
+
+  .project-card {
+    background-color: #111432;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px #BB86FC;
+    transition: transform 0.3s, box-shadow 0.3s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 25px #FF6EC7;
+  }
+
+/* ===== Contact Section ===== */
+.contact-section {
+  height: 50vh;
+  display: flex;
+  flex-direction: column; /* stack content vertically */
+  justify-content: center; /* center vertically */
+  align-items: center; /* center horizontally */
+  text-align: center; /* center text inside */
+  background-color: #0B0F2D; /* example dark space-themed background */
+  padding: 50px 20px; /* optional spacing */
+}
+
+.contact-links {
+  display: flex;
+  justify-content: center; /* centers buttons horizontally */
+  gap: 15px; /* spacing between buttons */
+  flex-wrap: wrap; /* wrap on small screens */
+  margin-top: 20px;
+}
+
+.contact-links a {
+  display: inline-block;
+  padding: 12px 30px;
+  font-size: 1.2em;
+  color: white;
+  background-color: #FF6EC7;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: background-color 0.3s, transform 0.2s;
+  text-align: center;
+}
+
+.contact-links a:hover {
+  background-color: #BB86FC;
+  transform: scale(1.05);
+}
+
+.contact-links a:active {
+  background-color: #FF69B4;
+}
+
+</style>
+</head>
+<body>
+
+<!-- ===== Navigation ===== -->
+<nav>
+  <a href="#about-me">About Me</a>
+  <a href="#projects">Projects</a>
+  <a href="#skills">Skills</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<!-- ===== About Me ===== -->
+<section id="about-me">
+  <h1>Hello! I'm Faisa 👋</h1>
+  <p>I'm a final-year Computer Science student from Oslo studying in London. I’m passionate about AI, machine learning, and software engineering, with a focus on developing technology that solves real-world problems. Feel free to explore my projects below to see my journey in action!</p>
+</section>
+
+<!-- ===== Projects ===== -->
+<section id="projects">
+  <h2>My Projects 🚀</h2>
+  <div class="projects-section">
+    <div class="project-card">
+      <a href="https://github.com/faisaxhmed/faisaxhmed.github.io" target="_blank" class="project-link">
+        <h3>Recipe Sharing Platform</h3>
+      </a>
+      <p>Full-stack web app using HTML, CSS, JavaScript, Node.js, Express.js & MySQL. Implemented Agile workflow, version control with Git/GitHub, and Docker containerization.</p>
+    </div>
+    
+    <div class="project-card">
+      <a href="https://github.com/faisaxhmed/faisaxhmed.github.io" target="_blank" class="project-link">
+        <h3>Data Science Job Market Analysis</h3>
+      </a>
+      <p>Analyzed the job market for data science roles using Python (Pandas, NumPy, Scikit-learn), exploring trends between skills, seniority, and salaries.</p>
+    </div>
+
+    <div class="project-card">
+      <a href="https://github.com/faisaxhmed/faisaxhmed.github.io/blob/468831eaae928cdfc0bb67b8aa4b4085b9ae5a74/AI/AI_Coursework%202%20(1)%20(2).ipynb" target="_blank" class="project-link">
+        <h3>AI for Sustainable Transportation</h3>
+      </a>
+      <p>Developed an AI-based navigation system to optimize delivery routes with reduced carbon footprint using algorithmic optimization and machine learning techniques.</p>
+    </div>
+
+    <div class="project-card">
+      <a href="https://github.com/faisaxhmed/faisaxhmed.github.io" target="_blank" class="project-link">
+        <h3>Mobile App Project (Ongoing)</h3>
+      </a>
+      <p>Currently building a mobile app for my final year project from scratch. Using React Native to explore UI/UX design and mobile software development principles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===== Skills ===== -->
+<section id="skills">
+  <h2>My Skills 💻</h2>
+  <div class="skills-grid">
+    <div class="skill-box">
+      <h3>Programming Languages</h3>
+      <ul>
+        <li>Python</li>
+        <li>C++</li>
+        <li>Java</li>
+        <li>SQL</li>
+        <li>JavaScript</li>
+        <li>C</li>
+        <li>HTML</li>
+        <li>CSS</li>
+      </ul>
+    </div>
+
+    <div class="skill-box">
+      <h3>Frameworks & Libraries</h3>
+      <ul>
+        <li>Pandas</li>
+        <li>NumPy</li>
+        <li>Scikit-learn</li>
+        <li>Matplotlib</li>
+        <li>TensorFlow</li>
+        <li>Keras</li>
+      </ul>
+    </div>
+
+    <div class="skill-box">
+      <h3>Tools & Platforms</h3>
+      <ul>
+        <li>GitHub</li>
+        <li>Linux</li>
+        <li>VS Code</li>
+        <li>IntelliJ IDEA</li>
+        <li>Microsoft Office</li>
+        <li>Jupyter Notebook</li>
+        <li>Docker</li>
+      </ul>
+    </div>
+
+    <div class="skill-box">
+      <h3>Core Concepts</h3>
+      <ul>
+        <li>OOP Programming</li>
+        <li>Algorithms & Data Structures</li>
+        <li>Software Development Lifecycle</li>
+        <li>Agile/Scrum</li>
+        <li>Version Control Workflow</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+
+<!-- ===== Contact ===== -->
+<section id="contact"  class="contact-section">
+  <h2>Let's Connect! 🌟</h2>
+  <p>I'm open to opportunities, collaborations, and ideas. Also, happy to explore new fields and locations!</p>
+  <div class="contact-links">
+    <a href="mailto:faisaahmed004@gmail.com">Email</a>
+    <a href="https://www.linkedin.com/in/faisa-ahmed-41768a214/" target="_blank">LinkedIn</a>
+    <a href="https://github.com/faisaxhmed/faisaxhmed.github.io" target="_blank">GitHub</a>
+    <a href="cv.sheikahf.docx" target="_blank">CV</a>
+  </div>
+</section>
+
+
+</body>
+</html>
