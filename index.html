@@ -737,21 +737,34 @@ footer {
 /* RESPONSIVE */
 @media (max-width: 768px) {
   nav { padding: 16px 24px; }
-  .nav-links { display: none; }
+  
+  .nav-right {
+    gap: 16px;
+  }
+
+  .nav-links {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .nav-links a {
+    font-size: 0.72rem;
+  }
+
   #hero, .section { padding-left: 24px; padding-right: 24px; }
   #hero { padding-top: 100px; }
   .exp-item { grid-template-columns: 1fr; gap: 6px; }
   .contact-inner { padding: 60px 24px; flex-direction: column; align-items: flex-start; }
   footer { padding: 24px; }
-  .scroll-indicator { display: none; }
   .achievement-card { flex-direction: column; }
   .achievement-right { align-items: flex-start; }
-}
 
-@media (prefers-reduced-motion: reduce) {
-  .cursor { animation: none; opacity: 1; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .scroll-indicator {
+    display: flex;
+    bottom: 24px;
+  }
 }
 </style>
 </head>
