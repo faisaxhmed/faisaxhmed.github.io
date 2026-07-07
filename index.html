@@ -792,9 +792,8 @@ footer {
 <section id="hero">
   <p class="hero-eyebrow">Comp Sci Graduate · Open to Work</p>
   <h1 class="hero-name">Faisa Ahmed</h1>
-  <p class="hero-title">Passionate about <span>building things that matter</span></p>
   <p class="hero-bio">
-    Curious about what technology can do when it's built properly and applied to the right problems. Feel free to explore my projects below to see my journey in action!
+    I'm a Computer Science graduate who moved from Oslo to London to study. I care about understanding a problem properly before touching a solution, which tends to produce work that's more considered than fast. I'm drawn to applied AI engineering specifically because it's one of the few areas where that instinct is actually required — the decisions have to be explainable, not just effective. 
   </p>
   <div class="hero-cta">
     <a href="#projects" class="btn-primary">View Projects</a>
@@ -817,8 +816,26 @@ footer {
   <h2 class="section-title reveal reveal-delay-1">Selected Projects</h2>
   <div class="projects-grid">
 
+<div class="project-card featured reveal reveal-delay-2">
+  <span class="project-tag">ML · GenAI · Applied AI Engineering</span>
+  <h3>Explainable Fraud Detector</h3>
+  <p>Full-stack AI system that detects fraud and explains its own decisions. Trained XGBoost on 1.3M synthetic transactions, deliberately choosing recall (0.93) over precision for a compliance context. Extended with a RAG pipeline that retrieves relevant fraud policy using SHAP values as the search query, an AI agent that checks merchant history and policy before recommending escalate or clear, and a full audit trail of every decision. Found and fixed three real data quality issues in the source dataset during development.</p>
+  <div class="project-tech">
+    <span class="tech-pill">XGBoost</span>
+    <span class="tech-pill">SHAP</span>
+    <span class="tech-pill">RAG</span>
+    <span class="tech-pill">Claude API</span>
+    <span class="tech-pill">ChromaDB</span>
+    <span class="tech-pill">FastAPI</span>
+    <span class="tech-pill">React</span>
+  </div>
+  <div class="project-links">
+    <a href="https://github.com/faisaxhmed/fraud-detection" target="_blank">GitHub →</a>
+  </div>
+
+</div>
     <div class="project-card featured reveal reveal-delay-1">
-      <span class="project-tag">Featured · Published Research</span>
+      <span class="project-tag">Safety-Critical AI · Academic Collaboration</span>
       <h3>Amanda — AI Mental Health Companion</h3>
       <p>React Native mobile app providing AI-powered mental health support, built on top of a published RCT (Vowels et al., 2025, PLOS Mental Health). Responsible for real-time voice and text chat via Socket.IO streaming, authentication flow, and a rule-based crisis detection system that flags at-risk users across both input modalities. SUS usability score: 75.8 across 7 participants.</p>
       <div class="project-tech">
@@ -833,21 +850,7 @@ footer {
       </div>
     </div>
 
-    <div class="project-card featured reveal reveal-delay-2">
-      <span class="project-tag">ML · Explainable AI</span>
-      <h3>Credit Card Fraud Detection</h3>
-      <p>End-to-end fraud detection pipeline on 1.3M real transactions. Compared four models across three class imbalance strategies — SMOTE, undersampling, and class weights. XGBoost achieved AUC-ROC of 0.997 and recall of 0.93. SHAP explainability applied to justify individual predictions, reflecting real-world regulatory requirements in financial services.</p>
-      <div class="project-tech">
-        <span class="tech-pill">XGBoost</span>
-        <span class="tech-pill">SHAP</span>
-        <span class="tech-pill">SMOTE</span>
-        <span class="tech-pill">Scikit-learn</span>
-        <span class="tech-pill">Python</span>
-      </div>
-      <div class="project-links">
-        <a href="https://github.com/faisaxhmed/fraud-detection" target="_blank">GitHub →</a>
-      </div>
-    </div>
+
 
     <div class="project-card reveal reveal-delay-1">
       <span class="project-tag">Data Engineering · Cloud</span>
@@ -1058,7 +1061,7 @@ footer {
         <li>Node.js / Express</li>
         <li>Socket.IO</li>
         <li>Pandas, NumPy, Matplotlib</li>
-        <li>FastAPI (in progress)</li>
+        <li>FastAPI </li>
         <li>LangChain</li>
       </ul>
     </div>
@@ -1083,7 +1086,7 @@ footer {
   <div class="contact-inner">
     <div class="contact-text reveal">
       <h2>Let's talk.</h2>
-      <p>BSc Computer Science graduate open to roles in data science, machine learning, data engineering, and software engineering. Open to relocation.</p>
+      <p>BSc Computer Science graduate open to roles in AI, Machine Learning, Data Science, Data Engineering, and Software Engineering. Open to relocation.</p>
     </div>
     <div class="contact-links reveal reveal-delay-2">
       <a href="mailto:faisaahmed004@gmail.com" class="btn-primary">Email Me</a>
