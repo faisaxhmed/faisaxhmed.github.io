@@ -35,13 +35,13 @@
   --teal-border: rgba(0, 107, 88, 0.22);
 }
 
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; font-size: 16px; }
 
 body {
   background-color: var(--navy);
   color: var(--white);
   font-family: 'Inter', sans-serif;
-  font-size: 16px;
+  font-size: 1rem;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
   transition: background-color var(--transition), color var(--transition);
@@ -162,6 +162,8 @@ nav {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
+  text-align: center;
   padding: 120px 48px 80px;
   max-width: 1100px;
   margin: 0 auto;
@@ -236,6 +238,7 @@ nav {
   display: flex;
   gap: 14px;
   flex-wrap: wrap;
+  justify-content: center;
   opacity: 0;
   transform: translateY(16px);
   animation: fadeUp 0.6s ease forwards 0.8s;
@@ -365,9 +368,13 @@ nav {
 .reveal-delay-4 { transition-delay: 0.32s; }
 
 /* PROJECTS */
+#projects {
+  max-width: 1200px;
+}
+
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
 }
 
@@ -416,6 +423,34 @@ nav {
 .project-card.featured {
   border-color: var(--teal-border);
   background: linear-gradient(140deg, var(--card-bg), rgba(0,212,180,0.04));
+}
+
+.in-progress-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #C9A15C;
+  background: transparent;
+  border: 1px solid rgba(201, 161, 92, 0.4);
+  padding: 4px 10px;
+  border-radius: 3px;
+  width: fit-content;
+}
+
+.planned-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #7C93C9;
+  background: transparent;
+  border: 1px solid rgba(124, 147, 201, 0.4);
+  padding: 4px 10px;
+  border-radius: 3px;
+  width: fit-content;
 }
 
 .project-tag {
@@ -476,15 +511,17 @@ nav {
 
 .project-links a {
   font-size: 0.8rem;
-  color: var(--teal);
+  color: #C9A15C;
   text-decoration: none;
   font-family: 'Space Grotesk', sans-serif;
   font-weight: 500;
   transition: opacity 0.2s, gap 0.2s;
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 5px;
 }
+
+.project-links a svg { flex-shrink: 0; }
 
 .project-links a:hover { opacity: 0.7; }
 
@@ -716,7 +753,48 @@ nav {
   line-height: 1.7;
 }
 
-.contact-links { display: flex; gap: 14px; flex-wrap: wrap; }
+.contact-links { display: flex; gap: 14px; flex-wrap: wrap; align-items: center; }
+
+.btn-contact-primary,
+.btn-contact-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: 46px;
+  padding: 0 26px;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  font-size: 0.85rem;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: opacity 0.2s, transform 0.2s, box-shadow 0.2s, background 0.2s;
+}
+
+.btn-contact-primary {
+  background: #C9A15C;
+  color: var(--navy);
+  border: 1px solid #C9A15C;
+}
+
+.btn-contact-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(201, 161, 92, 0.3);
+}
+
+.btn-contact-secondary {
+  background: var(--navy);
+  color: var(--slate-light);
+  border: 1px solid rgba(136, 146, 164, 0.3);
+}
+
+.btn-contact-secondary:hover {
+  background: rgba(136, 146, 164, 0.08);
+  transform: translateY(-2px);
+}
+
+.btn-contact-primary svg, .btn-contact-secondary svg { flex-shrink: 0; }
 
 /* FOOTER */
 footer {
@@ -755,6 +833,7 @@ footer {
 
   #hero, .section { padding-left: 24px; padding-right: 24px; }
   #hero { padding-top: 100px; }
+  .projects-grid { grid-template-columns: 1fr; }
   .exp-item { grid-template-columns: 1fr; gap: 6px; }
   .contact-inner { padding: 60px 24px; flex-direction: column; align-items: flex-start; }
   footer { padding: 24px; }
@@ -766,13 +845,66 @@ footer {
     bottom: 24px;
   }
 }
+
+@media (max-width: 640px) {
+  html { font-size: 15px; }
+
+  nav {
+    flex-wrap: wrap;
+    row-gap: 12px;
+    padding: 14px 20px;
+  }
+
+  .nav-logo { font-size: 0.9rem; }
+
+  .hero-eyebrow { font-size: 0.68rem; }
+  .hero-name { font-size: 2.4rem; }
+  .hero-title { font-size: 0.95rem; }
+  .hero-bio { font-size: 0.9rem; }
+
+  .section-title { font-size: 1.6rem; margin-bottom: 36px; }
+  .section-label { font-size: 0.68rem; }
+
+  .section { padding: 48px 20px; }
+  #hero { padding-left: 20px; padding-right: 20px; }
+
+  .project-card { padding: 22px; }
+  .project-card h3 { font-size: 1rem; }
+  .project-card p { font-size: 0.85rem; }
+
+  .nav-right {
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    row-gap: 12px;
+  }
+
+  .nav-links {
+    justify-content: center;
+    width: 100%;
+    gap: 12px 18px;
+  }
+
+  #hero { padding-top: 140px; }
+
+  .hero-bio { max-width: 100%; }
+
+  .contact-links { justify-content: flex-start; }
+
+  .btn-contact-primary, .btn-contact-secondary {
+    padding: 0 18px;
+    font-size: 0.8rem;
+  }
+
+  .skills-grid { grid-template-columns: 1fr; }
+}
 </style>
 </head>
 <body>
 
 <!-- NAV -->
 <nav>
-  <a href="#hero" class="nav-logo">FA</a>
+  <a href="#hero" class="nav-logo">Faisa Ahmed</a>
   <div class="nav-right">
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
@@ -793,7 +925,9 @@ footer {
   <p class="hero-eyebrow">Comp Sci Graduate · Open to Work</p>
   <h1 class="hero-name">Faisa Ahmed</h1>
   <p class="hero-bio">
-    I'm a Computer Science graduate who moved from Oslo to London to study. I care about understanding a problem properly before touching a solution, which tends to produce work that's more considered than fast. I'm drawn to applied AI engineering specifically because it's one of the few areas where that instinct is actually required — the decisions have to be explainable, not just effective. 
+    A Computer science graduate focused on applied AI engineering. I build AI systems with an emphasis on evaluation, explainability, and reliability, not just getting a model to work, but understanding where it fails and choosing the right architecture for the problem.
+    <br><br>
+    My projects span fraud detection, document intelligence, and AI-powered products, combining machine learning with the software engineering needed to turn prototypes into usable systems.
   </p>
   <div class="hero-cta">
     <a href="#projects" class="btn-primary">View Projects</a>
@@ -816,10 +950,10 @@ footer {
   <h2 class="section-title reveal reveal-delay-1">Selected Projects</h2>
   <div class="projects-grid">
 
-<div class="project-card featured reveal reveal-delay-2">
+<div class="project-card featured reveal reveal-delay-1">
   <span class="project-tag">ML · GenAI · Applied AI Engineering</span>
   <h3>Explainable Fraud Detector</h3>
-  <p>Full-stack AI system that detects fraud and explains its own decisions. Trained XGBoost on 1.3M synthetic transactions, deliberately choosing recall (0.93) over precision for a compliance context. Extended with a RAG pipeline that retrieves relevant fraud policy using SHAP values as the search query, an AI agent that checks merchant history and policy before recommending escalate or clear, and a full audit trail of every decision. Found and fixed three real data quality issues in the source dataset during development.</p>
+  <p>Trained XGBoost on 1.3M synthetic transactions, deliberately optimizing for recall (0.93) over precision, the right tradeoff when missing fraud costs more than a false alarm. Found and fixed three real data quality issues in the source dataset before trusting the model's output. Extended with a RAG pipeline using SHAP values as the retrieval query to pull relevant fraud policy, and an agent that checks merchant history against policy before recommending escalate or clear, with a full audit trail on every decision.</p>
   <div class="project-tech">
     <span class="tech-pill">XGBoost</span>
     <span class="tech-pill">SHAP</span>
@@ -830,14 +964,49 @@ footer {
     <span class="tech-pill">React</span>
   </div>
   <div class="project-links">
-    <a href="https://github.com/faisaxhmed/fraud-detection" target="_blank">GitHub →</a>
+    <a href="https://github.com/faisaxhmed/fraud-detection" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
   </div>
 
 </div>
+
+    <div class="project-card reveal reveal-delay-2">
+      <span class="project-tag">Full-Stack · Web App</span>
+      <h3>My Job Chase</h3>
+      <p>Full-stack job application tracker, built after my own tracking notes became an unsearchable mess. Logs every application with status, dates, and a saved copy of the job description so it survives the listing being taken down. Per-user data isolation, rate-limited auth, Postgres-backed sessions. Deployed and used by friends tracking their own job search.</p>
+      <div class="project-tech">
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">Express</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">bcrypt</span>
+        <span class="tech-pill">Resend</span>
+        <span class="tech-pill">Render</span>
+      </div>
+      <div class="project-links">
+        <a href="https://myjobchase.com/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Site</a>
+        <a href="https://github.com/faisaxhmed/my-job-chase" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-3">
+      <span class="project-tag">RAG · Applied AI Engineering</span>
+      <h3>Legal Document Explainer</h3>
+      <p>Upload a legal document and ask questions grounded strictly in its own text. Built two complete Q&A pipelines, full-context and RAG, and evaluated them head to head instead of assuming RAG was right by default. Found a real accuracy gap on long documents, traced it to three separate causes, and shipped the evidence-based recommendation over the trendier architecture.</p>
+      <div class="project-tech">
+        <span class="tech-pill">RAG</span>
+        <span class="tech-pill">ChromaDB</span>
+        <span class="tech-pill">Sentence-Transformers</span>
+        <span class="tech-pill">PyMuPDF</span>
+        <span class="tech-pill">Claude API</span>
+      </div>
+      <div class="project-links">
+        <a href="https://github.com/faisaxhmed/legal-doc-explainer" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
+      </div>
+    </div>
+
     <div class="project-card featured reveal reveal-delay-1">
       <span class="project-tag">Safety-Critical AI · Academic Collaboration</span>
       <h3>Amanda — AI Mental Health Companion</h3>
-      <p>React Native mobile app providing AI-powered mental health support, built on top of a published RCT (Vowels et al., 2025, PLOS Mental Health). Responsible for real-time voice and text chat via Socket.IO streaming, authentication flow, and a rule-based crisis detection system that flags at-risk users across both input modalities. SUS usability score: 75.8 across 7 participants.</p>
+      <p>React Native mobile app built on top of a published RCT (Vowels et al., 2025, PLOS Mental Health), working inside an existing academic codebase rather than a greenfield build, coordinating changes with the research team via Git. Responsible for real-time voice and text chat via Socket.IO streaming, plus a rule-based crisis detection system that flags at-risk users across both input modes, a safety-critical feature with zero tolerance for false negatives. SUS usability score: 75.8 across 7 participants.</p>
       <div class="project-tech">
         <span class="tech-pill">React Native</span>
         <span class="tech-pill">Socket.IO</span>
@@ -845,17 +1014,15 @@ footer {
         <span class="tech-pill">NLP</span>
       </div>
       <div class="project-links">
-        <a href="https://github.com/users/Mohamad-04/projects/4/views/3?filterQuery=assignee%3Afaisaxhmed" target="_blank">View Contributions →</a>
-        <a href="https://www.youtube.com/shorts/VtVsabjE6lw" target="_blank">Watch Demo →</a>
+        <a href="https://github.com/users/Mohamad-04/projects/4/views/3?filterQuery=assignee%3Afaisaxhmed" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Contributions</a>
+        <a href="https://www.youtube.com/shorts/VtVsabjE6lw" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Watch Demo</a>
       </div>
     </div>
 
-
-
-    <div class="project-card reveal reveal-delay-1">
+    <div class="project-card reveal reveal-delay-2">
       <span class="project-tag">Data Engineering · Cloud</span>
       <h3>Azure Data Pipeline</h3>
-      <p>End-to-end cloud data pipeline built as part of a university group project. Implemented ingestion, transformation, and visualisation layers using ADF, ADLS Gen2, Databricks, Synapse Analytics, and Power BI. Led architecture framing and narration for the final assessed presentation.</p>
+      <p>End-to-end cloud pipeline built with a university team of four. Owned the architecture framing and led the narration for the final assessed presentation, translating a multi-stage ingestion-to-visualization pipeline into a story a non-technical audience could follow.</p>
       <div class="project-tech">
         <span class="tech-pill">Azure Data Factory</span>
         <span class="tech-pill">Databricks</span>
@@ -864,10 +1031,24 @@ footer {
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-2">
+    <div class="project-card reveal reveal-delay-3">
+      <span class="project-tag">Applied AI Engineering</span>
+      <span class="in-progress-badge">In Progress</span>
+      <h3>TeachMeThis</h3>
+      <p>A study tool that reads your actual lecture material before it teaches you. Upload course PDFs, get grounded explanations, get quizzed, and get targeted follow-up questions on exactly what you got wrong. Scoped deliberately small for v1 to validate the core loop before adding accounts or spaced repetition.</p>
+      <div class="project-tech">
+        <span class="tech-pill">FastAPI</span>
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">PyMuPDF</span>
+        <span class="tech-pill">Claude API</span>
+      </div>
+      <p style="flex-grow: 0; font-size: 0.8rem; color: var(--slate); font-family: 'Space Grotesk', sans-serif;">In active development</p>
+    </div>
+
+    <div class="project-card reveal reveal-delay-1">
       <span class="project-tag">Data Science · Analytics</span>
       <h3>Google Step Up Challenge</h3>
-      <p>Analysed simulated Google campaign data to inform a $10M multi-market Gemini Pro student campaign. Built a Python pipeline to run proportion z-tests across 48 brand lift studies, filtering to 40 statistically significant results. Calculated Cost Per Lifted User by joining validated lift data to historic spend across markets and channels.</p>
+      <p>Analyzed simulated Google campaign data to inform a $10M multi-market Gemini Pro student campaign. Ran proportion z-tests across 48 brand lift studies, filtering to 40 statistically significant results, then calculated Cost Per Lifted User by joining validated lift data to historic spend.</p>
       <div class="project-tech">
         <span class="tech-pill">Python</span>
         <span class="tech-pill">Statsmodels</span>
@@ -876,14 +1057,14 @@ footer {
         <span class="tech-pill">Jupyter</span>
       </div>
       <div class="project-links">
-        <a href="https://github.com/faisaxhmed/google-step-up-data-science" target="_blank">GitHub →</a>
+        <a href="https://github.com/faisaxhmed/google-step-up-data-science" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-3">
+    <div class="project-card reveal reveal-delay-2">
       <span class="project-tag">Software Engineering · Team Project</span>
       <h3>Recipe Sharing Platform</h3>
-      <p>Full-stack web application built in a team of four using Node.js, Express, and MySQL. Containerised with Docker and shipped with CI/CD pipelines via GitHub Actions. Taught me how real software teams work — version control discipline, pull request workflows, and delivering a working product under deadlines.</p>
+      <p>Full-stack app built with a team of four, containerized with Docker and shipped via GitHub Actions CI/CD. First real experience with team software workflows: version control discipline, pull requests, and delivering under a shared deadline.</p>
       <div class="project-tech">
         <span class="tech-pill">Node.js</span>
         <span class="tech-pill">Express</span>
@@ -892,14 +1073,14 @@ footer {
         <span class="tech-pill">GitHub Actions</span>
       </div>
       <div class="project-links">
-        <a href="https://github.com/faisaxhmed/faisaxhmed.github.io/blob/main/SoftwareEngineering/MyRecipePal.pdf" target="_blank">View Walkthrough →</a>
+        <a href="https://github.com/faisaxhmed/faisaxhmed.github.io/blob/main/SoftwareEngineering/MyRecipePal.pdf" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>View Walkthrough</a>
       </div>
     </div>
 
-    <div class="project-card reveal reveal-delay-4">
+    <div class="project-card reveal reveal-delay-3">
   <span class="project-tag">Cybersecurity · Labs</span>
   <h3>Cybersecurity Lab Portfolio</h3>
-  <p>Hands-on lab exercises covering vulnerability assessment, web application security, and penetration testing fundamentals. Includes NMAP scanning, SSH security analysis, OWASP Juice Shop exploitation, and vulnerability mitigation techniques.</p>
+  <p>Hands-on labs in vulnerability assessment and penetration testing fundamentals: NMAP scanning, SSH security analysis, and exploiting/mitigating vulnerabilities in OWASP Juice Shop.</p>
   <div class="project-tech">
     <span class="tech-pill">NMAP</span>
     <span class="tech-pill">OWASP Juice Shop</span>
@@ -907,7 +1088,7 @@ footer {
     <span class="tech-pill">Vulnerability Assessment</span>
   </div>
   <div class="project-links">
-    <a href="https://github.com/faisaxhmed/Cyber-Sec" target="_blank">GitHub →</a>
+    <a href="https://github.com/faisaxhmed/Cyber-Sec" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
   </div>
 </div>
 
@@ -1039,6 +1220,7 @@ footer {
         <li>Class Imbalance (SMOTE, undersampling)</li>
         <li>NLP & Text Classification</li>
         <li>Scikit-learn, TensorFlow, Keras</li>
+        <li>Evaluation Design (RAG vs. full-context benchmarking, fixed test-set methodology)</li>
       </ul>
     </div>
 
@@ -1066,12 +1248,28 @@ footer {
       </ul>
     </div>
 
-    <div class="skill-group reveal reveal-delay-4">
+    <div class="skill-group reveal reveal-delay-1">
+      <h3>Databases</h3>
+      <ul>
+        <li>PostgreSQL</li>
+        <li>ChromaDB (vector storage)</li>
+      </ul>
+    </div>
+
+    <div class="skill-group reveal reveal-delay-2">
+      <h3>Security</h3>
+      <ul>
+        <li>Authentication (bcrypt password hashing, session management)</li>
+        <li>Rate limiting, CSRF protection, secure cookie handling</li>
+      </ul>
+    </div>
+
+    <div class="skill-group reveal reveal-delay-3">
       <h3>Cloud & Tools</h3>
       <ul>
         <li>Azure (ADF, ADLS Gen2, Databricks)</li>
         <li>Synapse Analytics, Power BI</li>
-        <li>Supabase, Vercel</li>
+        <li>Supabase, Vercel, Render</li>
         <li>Docker, GitHub Actions</li>
         <li>Git / GitHub</li>
         <li>Jupyter Notebook, VS Code</li>
@@ -1089,9 +1287,18 @@ footer {
       <p>BSc Computer Science graduate open to roles in AI, Machine Learning, Data Science, Data Engineering, and Software Engineering. Open to relocation.</p>
     </div>
     <div class="contact-links reveal reveal-delay-2">
-      <a href="mailto:faisaahmed004@gmail.com" class="btn-primary">Email Me</a>
-      <a href="https://www.linkedin.com/in/faisa-ahmed-41768a214/" target="_blank" class="btn-secondary">LinkedIn</a>
-      <a href="https://github.com/faisaxhmed" target="_blank" class="btn-secondary">GitHub</a>
+      <a href="mailto:faisaahmed004@gmail.com" class="btn-contact-primary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 6h20v12H2z"/><path d="M22 6l-10 7L2 6"/></svg>
+        Email Me
+      </a>
+      <a href="https://www.linkedin.com/in/faisa-ahmed-41768a214/" target="_blank" class="btn-contact-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.34V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.38-1.85 3.62 0 4.29 2.38 4.29 5.48v6.26zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+        LinkedIn
+      </a>
+      <a href="https://github.com/faisaxhmed" target="_blank" class="btn-contact-secondary">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.58 2 12.19c0 4.49 2.87 8.3 6.84 9.64.5.1.68-.22.68-.49 0-.24-.01-1.04-.01-1.89-2.78.61-3.37-1.21-3.37-1.21-.45-1.18-1.11-1.49-1.11-1.49-.91-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.06 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.31.1-2.72 0 0 .84-.28 2.75 1.05a9.32 9.32 0 0 1 5 0c1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.46.1 2.72.64.72 1.03 1.63 1.03 2.75 0 3.93-2.34 4.79-4.57 5.05.36.32.68.94.68 1.9 0 1.37-.01 2.48-.01 2.82 0 .27.18.6.69.49A10.02 10.02 0 0 0 22 12.19C22 6.58 17.52 2 12 2z"/></svg>
+        GitHub
+      </a>
     </div>
   </div>
 </section>
