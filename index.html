@@ -439,6 +439,20 @@ nav {
   width: fit-content;
 }
 
+.live-badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--teal);
+  background: transparent;
+  border: 1px solid var(--teal-border);
+  padding: 4px 10px;
+  border-radius: 3px;
+  width: fit-content;
+}
+
 .planned-badge {
   display: inline-block;
   font-size: 0.68rem;
@@ -970,24 +984,6 @@ footer {
 </div>
 
     <div class="project-card reveal reveal-delay-2">
-      <span class="project-tag">Full-Stack · Web App</span>
-      <h3>My Job Chase</h3>
-      <p>Full-stack job application tracker, built after my own tracking notes became an unsearchable mess. Logs every application with status, dates, and a saved copy of the job description so it survives the listing being taken down. Per-user data isolation, rate-limited auth, Postgres-backed sessions. Deployed and used by friends tracking their own job search.</p>
-      <div class="project-tech">
-        <span class="tech-pill">Node.js</span>
-        <span class="tech-pill">Express</span>
-        <span class="tech-pill">PostgreSQL</span>
-        <span class="tech-pill">bcrypt</span>
-        <span class="tech-pill">Resend</span>
-        <span class="tech-pill">Render</span>
-      </div>
-      <div class="project-links">
-        <a href="https://myjobchase.com/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Site</a>
-        <a href="https://github.com/faisaxhmed/my-job-chase" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
-      </div>
-    </div>
-
-    <div class="project-card reveal reveal-delay-3">
       <span class="project-tag">RAG · Applied AI Engineering</span>
       <h3>Legal Document Explainer</h3>
       <p>Upload a legal document and ask questions grounded strictly in its own text. Built two complete Q&A pipelines, full-context and RAG, and evaluated them head to head instead of assuming RAG was right by default. Found a real accuracy gap on long documents, traced it to three separate causes, and shipped the evidence-based recommendation over the trendier architecture.</p>
@@ -1001,6 +997,24 @@ footer {
       <div class="project-links">
         <a href="https://github.com/faisaxhmed/legal-doc-explainer" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
       </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-3">
+      <span class="project-tag">Applied AI Engineering</span>
+      <h3>TeachMeThis</h3>
+      <p>A study tool that reads your actual lecture material before it teaches you. Upload course PDFs, get grounded explanations, get quizzed, and get targeted follow-up questions on exactly what you got wrong. Built end-to-end: FastAPI backend, React frontend, deployed and password-protected to manage hosting costs as a live demo.</p>
+      <div class="project-tech">
+        <span class="tech-pill">FastAPI</span>
+        <span class="tech-pill">React</span>
+        <span class="tech-pill">PyMuPDF</span>
+        <span class="tech-pill">Claude API</span>
+        <span class="tech-pill">Railway</span>
+        <span class="tech-pill">Vercel</span>
+      </div>
+      <div class="project-links">
+        <a href="https://teach-me-this-two.vercel.app" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Site</a>
+      </div>
+      <p style="flex-grow: 0; font-size: 0.8rem; color: var(--slate); font-family: 'Space Grotesk', sans-serif;">Live demo — password required, contact me for access</p>
     </div>
 
     <div class="project-card featured reveal reveal-delay-1">
@@ -1020,6 +1034,24 @@ footer {
     </div>
 
     <div class="project-card reveal reveal-delay-2">
+      <span class="project-tag">Full-Stack · Web App</span>
+      <h3>My Job Chase</h3>
+      <p>Full-stack job application tracker, built after my own tracking notes became an unsearchable mess. Logs every application with status, dates, and a saved copy of the job description so it survives the listing being taken down. Per-user data isolation, rate-limited auth, Postgres-backed sessions. Deployed and used by friends tracking their own job search.</p>
+      <div class="project-tech">
+        <span class="tech-pill">Node.js</span>
+        <span class="tech-pill">Express</span>
+        <span class="tech-pill">PostgreSQL</span>
+        <span class="tech-pill">bcrypt</span>
+        <span class="tech-pill">Resend</span>
+        <span class="tech-pill">Render</span>
+      </div>
+      <div class="project-links">
+        <a href="https://myjobchase.com/" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>Live Site</a>
+        <a href="https://github.com/faisaxhmed/my-job-chase" target="_blank"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>GitHub</a>
+      </div>
+    </div>
+
+    <div class="project-card reveal reveal-delay-3">
       <span class="project-tag">Data Engineering · Cloud</span>
       <h3>Azure Data Pipeline</h3>
       <p>End-to-end cloud pipeline built with a university team of four. Owned the architecture framing and led the narration for the final assessed presentation, translating a multi-stage ingestion-to-visualization pipeline into a story a non-technical audience could follow.</p>
@@ -1029,20 +1061,6 @@ footer {
         <span class="tech-pill">Synapse Analytics</span>
         <span class="tech-pill">Power BI</span>
       </div>
-    </div>
-
-    <div class="project-card reveal reveal-delay-3">
-      <span class="project-tag">Applied AI Engineering</span>
-      <span class="in-progress-badge">In Progress</span>
-      <h3>TeachMeThis</h3>
-      <p>A study tool that reads your actual lecture material before it teaches you. Upload course PDFs, get grounded explanations, get quizzed, and get targeted follow-up questions on exactly what you got wrong. Scoped deliberately small for v1 to validate the core loop before adding accounts or spaced repetition.</p>
-      <div class="project-tech">
-        <span class="tech-pill">FastAPI</span>
-        <span class="tech-pill">React</span>
-        <span class="tech-pill">PyMuPDF</span>
-        <span class="tech-pill">Claude API</span>
-      </div>
-      <p style="flex-grow: 0; font-size: 0.8rem; color: var(--slate); font-family: 'Space Grotesk', sans-serif;">In active development</p>
     </div>
 
     <div class="project-card reveal reveal-delay-1">
