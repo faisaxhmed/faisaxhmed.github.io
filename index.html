@@ -439,6 +439,13 @@ nav {
   width: fit-content;
 }
 
+.project-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
 .live-badge {
   display: inline-block;
   font-size: 0.68rem;
@@ -964,6 +971,24 @@ footer {
   <h2 class="section-title reveal reveal-delay-1">Selected Projects</h2>
   <div class="projects-grid">
 
+    <div class="project-card featured reveal reveal-delay-1">
+      <div class="project-meta">
+        <span class="project-tag">AI Agents · MCP · System Integration</span>
+        <span class="in-progress-badge">In Progress</span>
+      </div>
+      <h3>LeadOps — AI Lead Operations Agent</h3>
+      <p>Building an AI system that connects Gmail and Salesforce to help businesses process inbound enquiries, investigate existing customer records, qualify leads and prepare follow-up actions. Designed around MCP, secure API integrations and human approval before consequential actions. Currently implementing the read-only agent infrastructure, with offline security testing and safeguards against unintended live API access.</p>
+      <div class="project-tech">
+        <span class="tech-pill">Python</span>
+        <span class="tech-pill">MCP</span>
+        <span class="tech-pill">Claude API</span>
+        <span class="tech-pill">Salesforce</span>
+        <span class="tech-pill">Gmail API</span>
+        <span class="tech-pill">Pytest</span>
+        <span class="tech-pill">Automation</span>
+      </div>
+    </div>
+
 <div class="project-card featured reveal reveal-delay-1">
   <span class="project-tag">ML · GenAI · Applied AI Engineering</span>
   <h3>Explainable Fraud Detector</h3>
@@ -1197,6 +1222,18 @@ footer {
 
     <div class="achievement-card reveal">
       <div class="achievement-left">
+        <div class="achievement-org">Anthropic · Claude Academy</div>
+        <h3>Introduction to Model Context Protocol — Skill Badge</h3>
+        <p>Completed Anthropic's introductory course on the Model Context Protocol (MCP), the open standard for connecting AI models to external tools, resources, and data sources. Credential ID: 40f2a622d2b930ca76caedde1cbe1dcf</p>
+      </div>
+      <div class="achievement-right">
+        <span class="achievement-year">2026</span>
+        <a href="https://academy.claude.com/verify/40f2a622d2b930ca76caedde1cbe1dcf" target="_blank" class="btn-secondary" style="padding: 8px 16px; font-size: 0.78rem;">Verify Badge →</a>
+      </div>
+    </div>
+
+    <div class="achievement-card reveal reveal-delay-1">
+      <div class="achievement-left">
         <div class="achievement-org">The Data Inspiration Group · Google</div>
         <h3>Google Step Up Career Challenge — Certificate</h3>
         <p>Completed the Data Science route of Google's Step Up Career Challenge, analysing campaign data to inform a $10M student marketing strategy for Gemini Pro.</p>
@@ -1207,7 +1244,7 @@ footer {
       </div>
     </div>
 
-    <div class="achievement-card reveal reveal-delay-1">
+    <div class="achievement-card reveal reveal-delay-2">
       <div class="achievement-left">
         <div class="achievement-org">National Cyber Force · University of Lancashire</div>
         <h3>Cyber Hackathon — CTF Competition</h3>
@@ -1289,6 +1326,7 @@ footer {
         <li>Synapse Analytics, Power BI</li>
         <li>Supabase, Vercel, Render</li>
         <li>Docker, GitHub Actions</li>
+        <li>Workflow Automation (API integrations, CI/CD)</li>
         <li>Git / GitHub</li>
         <li>Jupyter Notebook, VS Code</li>
       </ul>
